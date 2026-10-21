@@ -3,6 +3,7 @@ package sg.edu.ntu.taskflow_api.controller;
 import java.util.List;
 
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import sg.edu.ntu.taskflow_api.model.Task;
 import sg.edu.ntu.taskflow_api.service.TaskService;
 
+@CrossOrigin(origins = "https://skymonstership-taskflow-app.netlify.app")
 @RestController
 @RequestMapping("/api/tasks")
 public class AiController {

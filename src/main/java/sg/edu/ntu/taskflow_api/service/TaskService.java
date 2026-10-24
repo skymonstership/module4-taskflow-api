@@ -42,10 +42,10 @@ public class TaskService {
         taskRepository.deleteTask(id);
     }
 
-// •	markTaskAsComplete(Long id) 'in-progress' | 'done'
-    public Task markTaskAsComplete(Long id) {
-// For markTaskAsComplete, find the task, set its completed flag to true, and save it back.
-// Use constructor injection to bring the repository into the service.
-        return taskRepository.markTaskAsComplete(id);
-    }
+// // •	markTaskAsComplete(Long id) 'in-progress' | 'done'
+//     public Task markTaskAsComplete(Long id) {
+// // For markTaskAsComplete, find the task, set its completed flag to true, and save it back.
+// // Use constructor injection to bring the repository into the service.
+//         return taskRepository.markTaskAsComplete(id);
+//     }
 }

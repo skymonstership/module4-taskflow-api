@@ -50,6 +50,8 @@ public class TaskRepository {
         taskToUpdate.setTitle(task.getTitle());
         taskToUpdate.setDescription(task.getDescription());
         taskToUpdate.setPriority(task.getPriority());
+        taskToUpdate.setStatus(task.getStatus());
+        // taskToUpdate.setCompleted(task.getCompleted());
         return taskToUpdate;
     }
 
@@ -61,13 +63,13 @@ public class TaskRepository {
         taskList.remove(index);
     }
 
-    public Task markTaskAsComplete(Long id) {
-        Task task = findTaskById(id);
-        if (task == null) {
-            return null;
-        }
-        task.setCompleted(true);
-        return task;
-    }
+    // public Task markTaskAsComplete(Long id) {
+    //     Task task = findTaskById(id);
+    //     if (task == null) {
+    //         return null;
+    //     }
+    //     task.setCompleted(true);
+    //     return task;
+    // }
 
 }

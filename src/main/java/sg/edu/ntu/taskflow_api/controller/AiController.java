@@ -36,7 +36,8 @@ public class AiController {
             allTask.append("- Title: ").append(task.getTitle())
                     .append(", Description: ").append(task.getDescription())
                     .append(", Priority: ").append(task.getPriority())
-                    .append(", Completed: ").append(task.getCompleted()).append("\n");
+                    // .append(", Completed: ").append(task.getCompleted()).append("\n");
+                    .append(", Status: ").append(task.getStatus()).append("\n");
         }
         return chatClient.prompt()
                 .system("Summarize the following tasks in plain English:\n" + allTask.toString())

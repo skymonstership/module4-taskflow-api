@@ -61,13 +61,13 @@ public class TaskController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    // PUT /api/tasks/{id}/complete Mark a task as complete
-    // Return the correct status codes. 201 for create, 200 for the rest.
-    // Use constructor injection to bring the service into the controller.
-    @PutMapping("/{id}/complete")
-    public ResponseEntity<Task> markTaskAsComplete(@PathVariable Long id) {
-        Task completedTask = taskService.markTaskAsComplete(id);
-        return new ResponseEntity<>(completedTask, HttpStatus.OK);
+    // // PUT /api/tasks/{id}/complete Mark a task as complete
+    // // Return the correct status codes. 201 for create, 200 for the rest.
+    // // Use constructor injection to bring the service into the controller.
+    // @PutMapping("/{id}/complete")
+    // public ResponseEntity<Task> markTaskAsComplete(@PathVariable Long id) {
+    //     Task completedTask = taskService.markTaskAsComplete(id);
+    //     return new ResponseEntity<>(completedTask, HttpStatus.OK);
 
-    }
+    // }
 }

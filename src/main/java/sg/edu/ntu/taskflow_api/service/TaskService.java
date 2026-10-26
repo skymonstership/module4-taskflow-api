@@ -19,27 +19,35 @@ public class TaskService {
 
 // •	findAllTasks()
     public List<Task> findAllTasks() {
-        return taskRepository.findAllTasks();
+        return taskRepository.findAll();
     }
 
 // •	findTaskById(Long id)
     public Task findTaskById(Long id) {
-        return taskRepository.findTaskById(id);
+        return taskRepository.findById(id).orElse(null);
     }
 
 // •	createTask(Task task)
     public Task createTask(Task task) {
-        return taskRepository.createTask(task);
+        return taskRepository.save(task);
     }
 
 // •	updateTask(Long id, Task task)
     public Task updateTask(Long id, Task task) {
-        return taskRepository.updateTask(id, task);
+        Task existingTask = taskRepository.findById(id).orElse(null);
+        if (existingTask == null) {
+            return null;
+        }
+        existingTask.setTitle(task.getTitle());
+        existingTask.setDescription(task.getDescription());
+        existingTask.setPriority(task.getPriority());
+        existingTask.setStatus(task.getStatus());
+        return taskRepository.save(existingTask);
     }
 
 // •	deleteTask(Long id)
     public void deleteTask(Long id) {
-        taskRepository.deleteTask(id);
+        taskRepository.deleteById(id);
     }
 
 // // •	markTaskAsComplete(Long id) 'in-progress' | 'done'

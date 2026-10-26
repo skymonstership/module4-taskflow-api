@@ -4,35 +4,50 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import sg.edu.ntu.taskflow_api.repository.TaskRepository;
+import sg.edu.ntu.taskflow_api.model.Summary;
 import sg.edu.ntu.taskflow_api.model.Task;
+import sg.edu.ntu.taskflow_api.repository.SummaryRepository;
+import sg.edu.ntu.taskflow_api.repository.TaskRepository;
 
-@Service 
+@Service
 public class TaskService {
-    
-// The service holds your business logic and calls the repository. Write these methods:
-    private final TaskRepository taskRepository;
 
-    public TaskService(TaskRepository taskRepository) {
+    // The service holds your business logic and calls the repository. Write these
+    // methods:
+    private final TaskRepository taskRepository;
+    private final SummaryRepository summaryRepository;
+
+    public TaskService(TaskRepository taskRepository, SummaryRepository summaryRepository) {
         this.taskRepository = taskRepository;
+        this.summaryRepository = summaryRepository;
     }
 
-// •	findAllTasks()
+    // getTaskSummary
+    public Summary getTaskSummary() {
+        return summaryRepository.findById(1L).orElse(null);
+    }
+
+    // saveSummary
+    public Summary saveSummary(Summary summary) {
+        return summaryRepository.save(summary);
+    }
+
+    // • findAllTasks()
     public List<Task> findAllTasks() {
         return taskRepository.findAll();
     }
 
-// •	findTaskById(Long id)
+    // • findTaskById(Long id)
     public Task findTaskById(Long id) {
         return taskRepository.findById(id).orElse(null);
     }
 
-// •	createTask(Task task)
+    // • createTask(Task task)
     public Task createTask(Task task) {
         return taskRepository.save(task);
     }
 
-// •	updateTask(Long id, Task task)
+    // • updateTask(Long id, Task task)
     public Task updateTask(Long id, Task task) {
         Task existingTask = taskRepository.findById(id).orElse(null);
         if (existingTask == null) {
@@ -45,15 +60,16 @@ public class TaskService {
         return taskRepository.save(existingTask);
     }
 
-// •	deleteTask(Long id)
+    // • deleteTask(Long id)
     public void deleteTask(Long id) {
         taskRepository.deleteById(id);
     }
 
-// // •	markTaskAsComplete(Long id) 'in-progress' | 'done'
-//     public Task markTaskAsComplete(Long id) {
-// // For markTaskAsComplete, find the task, set its completed flag to true, and save it back.
-// // Use constructor injection to bring the repository into the service.
-//         return taskRepository.markTaskAsComplete(id);
-//     }
+    // // • markTaskAsComplete(Long id) 'in-progress' | 'done'
+    // public Task markTaskAsComplete(Long id) {
+    // // For markTaskAsComplete, find the task, set its completed flag to true, and
+    // save it back.
+    // // Use constructor injection to bring the repository into the service.
+    // return taskRepository.markTaskAsComplete(id);
+    // }
 }

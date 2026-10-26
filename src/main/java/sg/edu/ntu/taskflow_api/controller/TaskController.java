@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import sg.edu.ntu.taskflow_api.service.TaskService;
 import sg.edu.ntu.taskflow_api.model.Task;
 
-@CrossOrigin(origins = "https://skymonstership-taskflow-app.netlify.app")
+@CrossOrigin(origins = "${FRONTEND_URL:http://localhost:5173}")
 @RestController
 @RequestMapping("/api/tasks")
 public class TaskController {

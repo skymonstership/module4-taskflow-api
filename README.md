@@ -1,6 +1,8 @@
 # TaskFlow API - Dockerize & Deploy
 
 ## Live Application & Pipeline URLs
+* **Backend GitHub Repository**: [https://github.com/skymonstership/module4-taskflow-api](https://github.com/skymonstership/module4-taskflow-api)
+* **Frontend GitHub Repository**: [https://github.com/skymonstership/task-manager](https://github.com/skymonstership/task-manager)
 * **Railway Backend API Endpoint**: [https://taskflow-api-production-72ab.up.railway.app/api/tasks](https://taskflow-api-production-72ab.up.railway.app/api/tasks)
 * **Netlify Frontend Application**: [https://skymonstership-taskflow-app.netlify.app](https://skymonstership-taskflow-app.netlify.app)
 * **GitHub Actions Pipeline Run (Passed ✅)**: [https://github.com/skymonstership/module4-taskflow-api/actions/runs/40541633487](https://github.com/skymonstership/module4-taskflow-api/actions/runs/40541633487)
@@ -93,6 +95,7 @@ In accordance with course guidelines on experimenting and troubleshooting, the f
 
 * **OPTION 2: ADD A FRONTEND ON NETLIFY** — **Completed**
   - Single-page application providing full task management, status filtering, and dynamic AI summary rendering connected to the Railway API.
+  - [Frontend GitHub Repository](https://github.com/skymonstership/task-manager)
   - [Live Frontend Web App](https://skymonstership-taskflow-app.netlify.app)
 
 * **OPTION 3: USE YOUR SIMPLE CRM PROJECTS** — **Pending**

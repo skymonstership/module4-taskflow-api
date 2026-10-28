@@ -80,7 +80,7 @@ In accordance with course guidelines on experimenting and troubleshooting, the f
   ```java
   @CrossOrigin(origins = "${FRONTEND_URL:http://localhost:5173}")
 
-### 4. Minified React Error #31 & UTC Timestamp Parsing
+### 4. UTC Timestamp Parsing
 * **Problem**: Object serialization crashes in React and an 8-hour timestamp shift on local client displays.
 * **Solution**: Updated `AISummary.jsx` to safely extract JSON object properties and normalized ISO strings with explicit `Z` UTC indicators before local time conversion.
 
@@ -101,7 +101,7 @@ In accordance with course guidelines on experimenting and troubleshooting, the f
 * **OPTION 3: USE YOUR SIMPLE CRM PROJECTS** — **Pending**
 
 * **OPTION 4: PUBLISH VERSIONED DOCKER IMAGES** — **Completed**
-  - Published tagged container images (`latest`, `1.3.0`) to Docker Hub.
+  - Published tagged container images (`latest`, `1.3.0`，`1.2.0`) to Docker Hub.
   - [Docker Hub Repository](https://hub.docker.com/r/skymonstership/taskflow-api)
 
 * **OPTION 5: ADD SECURITY CHECKS** — **Pending**  
